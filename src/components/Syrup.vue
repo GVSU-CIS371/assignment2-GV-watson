@@ -7,22 +7,6 @@ import type { SyrupType } from "./stores/beverage";
 
 const props = defineProps<{ isSyruped: SyrupType }>();
 
-
- 
-    //name: "Black Tea",
-    //color: "#8B4513",
- 
-    //id: "b2",
-   // name: "Green Tea",
-    //color: "#C8E6C9",
-  
-    //id: "b3",
-    //name: "Coffee",
-   // color: "#6F4E37",
-
-
-
-
 </script>
 <style lang="scss" scoped>
 .syrup {
