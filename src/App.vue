@@ -16,43 +16,47 @@
           </label>
         </template>
 
-        <div>
-          <input type="radio" id="b1"  :value="`Black Tea`" v-model="BaseBeverageType" />
-          <label for="b1">No Cream</label>
-
-          <input type="radio" id="b2"  :value="`Green Tea`"  v-model="BaseBeverageType" />
-          <label for="b2">Milk</label>
-
-          <input type="radio" id="b3"  :value="`Coffee`"  v-model="BaseBeverageType" />
-          <label for="b3">Cream</label>
-        </div>
-
-        <div>
-          <input type="radio" id="c1"  :value="`No Cream`" v-model="CreamerType" />
-          <label for="c1">No Cream</label>
-
-          <input type="radio" id="c2"  :value="`Milk`"  v-model="CreamerType" />
-          <label for="c2">Milk</label>
-
-          <input type="radio" id="c3"  :value="`Cream`"  v-model="CreamerType" />
-          <label for="c3">Cream</label>
-
-          <input type="radio" id="c4"  :value="`Half & Half`" v-model="CreamerType" />
-          <label for="c4">Half & Half</label>
-        </div>
         
         <div>
-          <input type="radio" id="s1"  :value="`No Syrup`" v-model="SyrupType" />
-          <label for="s1">No Syrup</label>
+          <template v-for="base in bases" :key="base.id">
+            <input
+              type="radio"
+              name="base"
+              :id="base.id"
+              :value="base"
+              v-model="user_Base"
+            />
+            <label :for="base.id">{{ base.name }}</label>
+          </template>
+        </div>
 
-          <input type="radio" id="s2"  :value="`Vanilla`"  v-model="SyrupType" />
-          <label for="s2">Vanilla</label>
+        
+        <div>
+          <template v-for="cream in creamers" :key="cream.id">
+            <input
+              type="radio"
+              name="creamer"
+              :id="cream.id"
+              :value="cream"
+              v-model="user_Creamer"
 
-          <input type="radio" id="s3"  :value="`Caramel`"  v-model="SyrupType" />
-          <label for="s3">Caramel</label>
+            />
+            <label :for="cream.id">{{ cream.name }}</label>
+          </template>
+        </div>
 
-          <input type="radio" id="s4"  :value="`Hazelnut`" v-model="SyrupType" />
-          <label for="s4">Hazelnut</label>
+        
+        <div>
+          <template v-for="syrup in syrups" :key="syrup.id">
+            <input
+              type="radio"
+              name="syrup"
+              :id="syrup.id"
+              :value="syrup"
+              v-model="user_Syrup"
+            />
+            <label :for="syrup.id">{{ syrup.name }}</label>
+          </template>
         </div>
 
       </li>
@@ -66,15 +70,16 @@ import { ref } from "vue";
 import Beverage from "./components/Beverage.vue";
 import { temps, currentTemp } from "./stores/beverage";
 
-import { BaseBeverageType, CreamerType, SyrupType } from "./stores/beverage";
 import { bases, creamers, syrups } from "./stores/beverage";
 
-const BaseBeverageType = ref(0);
-const CreamerType = ref(0);
-const SyrupType = ref(0);
+
+const user_Base = ref(bases.value[0]);
+const user_Creamer = ref(creamers.value[0]);
+const user_Syrup = ref(syrups.value[0]);
 
 
 </script>
+
 
 <style lang="scss">
 body,
