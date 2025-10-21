@@ -3,15 +3,19 @@
     <Cold v-if="isIced" />
     <Hot v-else />
     <Contents>
+
       <template v-slot:top>
         <Creamer :isCreamed="isCreamed" />
       </template>
+
       <template v-slot:mid>
-        <Syrup :isSyruped="isSyruped" />
+        <Syrup v-if="isSyruped.id !== 's1'" :isSyruped="isSyruped"/>
       </template>
+
       <template v-slot:bottom>
         <Base :isDrink="isDrink" />
       </template>
+      
     </Contents>
   </Mug>
 </template>
@@ -31,8 +35,8 @@ type Props = {
   isDrink: BaseBeverageType;
   isCreamed: CreamerType;
   isSyruped: SyrupType;
+  
 };
 defineProps<Props>();
-
 
 </script>

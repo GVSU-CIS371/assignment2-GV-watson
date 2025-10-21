@@ -13,7 +13,7 @@ const props = defineProps<{ isDrink: BaseBeverageType; }>();
 .baseBeverage {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 120%;
   bottom: 0;
   animation: pour-tea 2s;
   z-index: 300;
