@@ -52,7 +52,11 @@ const user_Base = ref(bases.value[0]);
 const user_Creamer = ref(creamers.value[0]);
 const user_Syrup = ref(syrups.value[0]);
 
+//cd assignment2-GV-watson
+//npm run dev
 
+ //npm run build
+ //npm run deploy
 
 </script>
 
