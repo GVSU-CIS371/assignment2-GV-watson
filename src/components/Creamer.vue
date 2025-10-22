@@ -1,12 +1,12 @@
 <template>
   <div class="froth">
-  <div v-for="i in 5" class="foam" :style="{ background: isCreamed.color }"></div>
+  <div  class="foam" :style="{ background: props.isCreamed.color }"></div>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import type { CreamerType } from "./stores/beverage";
+import type { CreamerType } from "../stores/beverage";
 
 const props = defineProps<{ isCreamed: CreamerType }>();
 

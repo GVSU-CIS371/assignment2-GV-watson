@@ -1,9 +1,9 @@
 <template>
-<div class="baseBeverage" :style="{ backgroundColor: isDrink.color }"></div>
+<div class="baseBeverage" :style="{ backgroundColor: props.isDrink.color }"></div>
 </template>
 
 <script setup lang="ts">
-import type { BaseBeverageType } from "./stores/beverage";
+import type { BaseBeverageType } from "../stores/beverage";
 
 const props = defineProps<{ isDrink: BaseBeverageType; }>();
 
